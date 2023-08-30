@@ -6,7 +6,7 @@ def dnc(i, l, r, optl, optr, dp, psum):
     best = [float('inf'), l]
 
     for j in range(optl, min(mid, optr + 1)):
-        sum_val = psum[mid] - psum[j]
+        sum_val = psum[mid] - psum[j] #mid element minus jth element gives you range from [j, mid]
         best = min(best, [sum_val * sum_val + dp[i - 1][j], j])
 
     dp[i][mid] = best[0]
@@ -26,8 +26,8 @@ def main():
 
     dp[0][0] = 0
 
-    for i in range(1, K + 1):
-        dnc(i, 1, N, 0, N - 1, dp, psum)
+    for i in range(1, K + 1): 
+        dnc(i, 1, N, 0, N - 1, dp, psum) #1 based indexing for psum
 
     print(dp[K][N])
 

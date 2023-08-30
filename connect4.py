@@ -31,7 +31,7 @@ class Board:
                 self.grid[row][c] = piece
                 return row
     def winRound(self, row, col, piece, connectN):
-
+#hola
         #win horizontal
         count = 0
         for c in range(self.cols):

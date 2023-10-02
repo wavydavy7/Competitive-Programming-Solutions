@@ -72,7 +72,8 @@ def main():
     N = int(input())
     g = [[] for _ in range(N + 1)] 
     maxl1 = [Pair(0, 0) for _ in range(N + 1)]  # Remove the 'g' from maxl1 and maxl2 declarations
-    maxl2 = [Pair(0, 0) for _ in range(N + 1)]
+    maxl2 = [Pair(0, 0) for _ in range(N + 1)] #you have this to calculate the distance between node in the max chain and the longest one
+    #outside the node(which is obv the second longest)
 
     for i in range(1, N):
         a, b = map(int, input().split())
